@@ -11,6 +11,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { CommentCardComponent } from './components/comment-card/comment-card.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { CommentListComponent } from './components/comment-list/comment-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
     AboutComponent,
     MovieCardComponent,
     CommentCardComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    CommentListComponent
   ],
   imports: [
     BrowserModule,

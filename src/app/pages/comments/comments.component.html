@@ -1,1 +1,15 @@
-<p>comments works!</p>
+<main class="container">  
+    <h1>Livre d'or</h1>
+
+    <form #f="ngForm" (submit)="addComment(f)">
+        <label for="username">Identifiant</label>
+        <input type="text" id="username" ngModel name="username">
+
+        <label for="comment">Commentaire</label>
+        <textarea name="" id="comment" ngModel name="comment"></textarea>
+
+        <button type="submit">Laisser un commentaire</button>
+    </form>
+
+    <app-comment-list *ngIf="allComments" [allComments]="allComments"></app-comment-list>
+</main>  

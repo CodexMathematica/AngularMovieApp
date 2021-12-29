@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-comment-card',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentCardComponent implements OnInit {
 
+  @Input() public comment!: any;
+  @Output() deleteComment = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  delete(comment: any){
+    this.deleteComment.emit(comment);
   }
 
 }

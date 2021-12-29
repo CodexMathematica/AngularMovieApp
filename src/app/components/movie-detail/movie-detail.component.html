@@ -1,1 +1,16 @@
-<p>movie-detail works!</p>
+<div class="movieInfo">
+    <h2> Informations sur le film </h2>
+    <img src="{{movieInfo.Poster}}" alt="movieInfo poster" />
+    <div class="data-container">
+        <ul>
+            <li>{{movieInfo.Title}} ({{movieInfo.Rated}})</li>
+            <li>{{movieInfo.Runtime}} - {{movieInfo.Released}}</li>
+            <li>Type: {{movieInfo.Type}} - Genre: {{movieInfo.Genre}}</li>
+            <li>Scénario: {{movieInfo.Writer}}</li>
+            <li>Direction: {{movieInfo.Director}}</li>
+            <li>Acteurs: {{movieInfo.Actors}}</li>
+            <li>{{movieInfo.Plot}}</li>
+            <li>{{movieInfo.imdbRating}} ({{movieInfo.imdbVote}})</li>
+        </ul>
+    </div>
+</div>

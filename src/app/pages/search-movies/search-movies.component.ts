@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchMoviesComponent implements OnInit {
 
-  apiData: any;
+  moviesData: any;
+  movieData: any;
   search!:string;
+  info = false;
   // TODO : à passer en variable d'env pour la cacher
   key: string = "2d0a0885";
 
@@ -18,17 +20,33 @@ export class SearchMoviesComponent implements OnInit {
   }
 
   searchMovie(): void {
-    this.getApiData(this.search);
+    this.getMoviesData('s=' + this.search);
   }
 
-  getApiData(search: string): void{
-    fetch(`http://www.omdbapi.com/?s=${search}&apikey=${this.key}`) 
+  movieInfo(id:any): void {
+    this.getMovieData('i=' + id);
+    this.info = true;
+  }
+
+  getMoviesData(search: string): void{
+    fetch(`http://www.omdbapi.com/?${search}&apikey=${this.key}`) 
     .then(response=>response.json())
-    .then(res=>{this.setApiData(res.Search);}) 
+    .then(res=>{this.setMoviesData(res.Search);}) 
   }
 
-  setApiData(data:any): void{
-    this.apiData = data;
-    console.log(this.apiData);
+  getMovieData(search: string): void{
+    fetch(`http://www.omdbapi.com/?${search}&apikey=${this.key}`) 
+    .then(response=>response.json())
+    .then(res=>{this.setMovieData(res);}) 
+  }
+
+  setMoviesData(data:any): void{
+    this.moviesData = data;
+    console.log(this.moviesData);
+  }
+
+  setMovieData(data:any): void{
+    this.movieData = data;
+    console.log(this.movieData);
   }
 }

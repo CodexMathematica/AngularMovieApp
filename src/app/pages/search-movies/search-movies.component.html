@@ -1,1 +1,6 @@
-<p>search-movies works!</p>
+<form (submit)="searchMovie()">
+    <input type="text" [(ngModel)]="search" name="search" placeholder="Chercher un film">
+    <button type="submit">Ajouter</button>
+</form>
+<li *ngFor="let movie of apiData"><app-movie-card [movie]="movie"></app-movie-card></li>
+<app-movie-detail></app-movie-detail>

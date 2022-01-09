@@ -15,9 +15,15 @@ export class CommentsComponent implements OnInit {
   ngOnInit(): void {}
 
   addComment(form : any) {
-    this.commentService.createComment(form.value);
-    form.reset();
-    this.allComments = this.commentService.getComments();
+    let errorMessage = document.getElementById('errorMessage'); // 'Cibler' la balise p via son id
+    if(form.value.username !='' && form.value.comment.length > 3){ // But : Empeche de soumettre un formulaire vide
+      this.commentService.createComment(form.value);
+      form.reset();
+      errorMessage!.innerHTML =''; // Vider la balise p si message d'erreur afficher
+      this.allComments = this.commentService.getComments();
+    }else{
+      errorMessage!.innerHTML = 'Identifiant ou Commentaire trop court ...'; // !verifie que pas null
+    }
   }
 
 }

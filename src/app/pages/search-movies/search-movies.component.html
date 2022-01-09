@@ -1,6 +1,7 @@
 <form (submit)="searchMovie()">
     <input type="text" [(ngModel)]="search" name="search" placeholder="Chercher un film">
     <button type="submit">Ajouter</button>
+    <p id="errorMessage"></p>
 </form>
 <ul>
     <li *ngFor="let movie of moviesData">

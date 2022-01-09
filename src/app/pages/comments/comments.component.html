@@ -9,6 +9,7 @@
         <textarea name="" id="comment" ngModel name="comment"></textarea>
 
         <button type="submit">Laisser un commentaire</button>
+        <p id='errorMessage'></p>
     </form>
 
     <app-comment-list *ngIf="allComments" [allComments]="allComments"></app-comment-list>

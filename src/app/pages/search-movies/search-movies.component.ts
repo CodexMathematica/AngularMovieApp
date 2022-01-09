@@ -11,7 +11,6 @@ export class SearchMoviesComponent implements OnInit {
   movieData: any;
   search!:string;
   info = false;
-  // TODO : à passer en variable d'env pour la cacher
   key: string = "2d0a0885";
 
   constructor() { }
@@ -20,7 +19,13 @@ export class SearchMoviesComponent implements OnInit {
   }
 
   searchMovie(): void {
-    this.getMoviesData('s=' + this.search);
+    let errorMessage = document.getElementById('errorMessage');
+    if(this.search){
+      errorMessage!.innerHTML ='';
+      this.getMoviesData('s=' + this.search);
+    }else{
+      errorMessage!.innerHTML = 'Veuillez saisir un titre de film !';
+    }
   }
 
   movieInfo(id:any): void {

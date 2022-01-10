@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --main-bg-color: darkgrey;
+    --main-btn-color: darkblue;
+    --main-card-color: whitesmoke;
+    --second-card-color: black;
+    --main-title-color: grey;
+    --main-text-color: gray;
+    --second-text-color: darkgray;
+}
+body {
+    text-align: center;
+    padding: 30px;
+    background: var(--main-bg-color);
+    font-family: Arial;
+}
+h1{
+    margin: 30px 10px 20px 10px;
+    color: var(--main-title-color);
+    font-size: 28px;
+}
+
+h2{
+    margin: 20px 0px 10px 0px;
+    color: var(--main-title-color);
+    font-size: 24px;
+}

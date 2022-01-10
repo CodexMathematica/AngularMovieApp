@@ -1,16 +1,23 @@
 <div class="movieInfo">
     <h2> Informations sur le film </h2>
-    <img src="{{movieInfo.Poster}}" alt="movieInfo poster" />
+    
+    <ng-template [ngIf]="movieInfo.Poster!='N/A'" [ngIfElse]="noPoster"> <!--Afficher un poster par défaut si pas d'image-->
+        <img src="{{movieInfo.Poster}}" alt="movieInfo poster" />
+    </ng-template>
+    <ng-template #noPoster>
+        <img src="https://media.giphy.com/media/xRvMWkuZt2ChfdtdUv/giphy.gif" alt="movieInfo poster" />
+    </ng-template>
+
     <div class="data-container">
         <ul>
             <li>{{movieInfo.Title}} ({{movieInfo.Rated}})</li>
-            <li>{{movieInfo.Runtime}} - {{movieInfo.Released}}</li>
-            <li>Type: {{movieInfo.Type}} - Genre: {{movieInfo.Genre}}</li>
-            <li>Scénario: {{movieInfo.Writer}}</li>
-            <li>Direction: {{movieInfo.Director}}</li>
-            <li>Acteurs: {{movieInfo.Actors}}</li>
-            <li>{{movieInfo.Plot}}</li>
-            <li>{{movieInfo.imdbRating}} ({{movieInfo.imdbVote}})</li>
+            <li> <span *ngIf="movieInfo.Runtime!='N/A'">{{movieInfo.Runtime}}</span><span *ngIf="movieInfo.Released!='N/A'"> - {{movieInfo.Released}}</span></li>
+            <li> <span *ngIf="movieInfo.Type!='N/A'">Type: {{movieInfo.Type}}</span><span *ngIf="movieInfo.Genre!='N/A'"> - Genre: {{movieInfo.Genre}}</span></li>
+            <li *ngIf="movieInfo.Writer!='N/A'">Scénario: {{movieInfo.Writer}}</li>
+            <li *ngIf="movieInfo.Director!='N/A'">Direction: {{movieInfo.Director}}</li>
+            <li *ngIf="movieInfo.Actors!='N/A'">Acteurs: {{movieInfo.Actors}}</li>
+            <li *ngIf="movieInfo.Plot!='N/A'">{{movieInfo.Plot}}</li>
+            <li><span *ngIf="movieInfo.imdbRating!='N/A'">{{movieInfo.imdbRating}}</span><span *ngIf="movieInfo.imdbVotes!='N/A'">({{movieInfo.imdbVotes}})</span></li>
         </ul>
     </div>
 </div>

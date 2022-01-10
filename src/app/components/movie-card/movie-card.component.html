@@ -1,10 +1,16 @@
 <div class="card">
-    <img src={{movie.Poster}} alt="movie poster"/>
+    <ng-template [ngIf]="movie.Poster!='N/A'" [ngIfElse]="noPoster"> <!--Afficher un poster par défaut si pas d'image-->
+        <img src="{{movie.Poster}}" alt="movieInfo poster" />
+    </ng-template>
+    <ng-template #noPoster>
+        <img src="https://media.giphy.com/media/xRvMWkuZt2ChfdtdUv/giphy.gif" alt="movieInfo poster" />
+    </ng-template>
+
     <div class="data-container">
         <ul>
             <li>{{movie.Title}}</li>
-            <li>{{movie.Type}}</li>
-            <li>{{movie.Year}}</li>
+            <li *ngIf="movie.Type!='N/A'">{{movie.Type}}</li>
+            <li *ngIf="movie.Year!='N/A'">{{movie.Year}}</li>
         </ul>
     </div>
 </div>

@@ -31,6 +31,13 @@ export class SearchMoviesComponent implements OnInit {
   movieInfo(id:any): void {
     this.getMovieData('i=' + id);
     this.info = true;
+    setTimeout(() => { // Le timeout laisse le temps au component d'être injecter dans la page
+      document.getElementById('see')!.scrollIntoView({ // Scroll vers la div en bas de page
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+        });
+      }, 400);
   }
 
   getMoviesData(search: string): void{

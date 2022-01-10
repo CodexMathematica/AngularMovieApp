@@ -1,0 +1,27 @@
+.form{
+    margin: 30px 10px 20px 10px;
+  }
+
+  #search{
+    padding: 14px 40px;
+  }
+  #search:focus{
+    outline: none;
+    border: 2px solid var(--main-btn-color);
+  }
+
+  .btn{
+    background-color: var(--main-card-color);
+    color: var(--main-btn-color);
+    border: 2px solid var(--main-btn-color);
+    border-radius: 12px;
+    padding: 14px 40px;
+  }
+
+  .btn:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  li {
+    list-style-type: none;
+}

@@ -3,10 +3,14 @@
     <button type="submit">Ajouter</button>
     <p id="errorMessage"></p>
 </form>
+
 <ul>
     <li *ngFor="let movie of moviesData">
-        <button (click)="movieInfo(movie.imdbID)">Voir information complémentaire</button>
+        <button class="btn" (click)="movieInfo(movie.imdbID)">Voir information complémentaire</button>
         <app-movie-card [movie]="movie">
     </app-movie-card></li>
 </ul>
+
 <app-movie-detail *ngIf="info" [movieInfo]="movieData"></app-movie-detail>
+
+<div id="see"></div>

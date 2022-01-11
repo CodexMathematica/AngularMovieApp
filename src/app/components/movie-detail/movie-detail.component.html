@@ -10,7 +10,7 @@
 
     <div class="data-container">
         <ul>
-            <li>{{movieInfo.Title}} ({{movieInfo.Rated}})</li>
+            <li>{{movieInfo.Title}} <span *ngIf="movieInfo.Rated!='N/A'">({{movieInfo.Rated}})</span></li>
             <li> <span *ngIf="movieInfo.Runtime!='N/A'">{{movieInfo.Runtime}}</span><span *ngIf="movieInfo.Released!='N/A'"> - {{movieInfo.Released}}</span></li>
             <li> <span *ngIf="movieInfo.Type!='N/A'">Type: {{movieInfo.Type}}</span><span *ngIf="movieInfo.Genre!='N/A'"> - Genre: {{movieInfo.Genre}}</span></li>
             <li *ngIf="movieInfo.Writer!='N/A'">Scénario: {{movieInfo.Writer}}</li>

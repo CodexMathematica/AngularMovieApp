@@ -1,8 +1,15 @@
-<nav>
-  <a routerLink="/">Accueil</a>
-  <a routerLink="/search">Rechercher des informations sur un film</a>
-  <a routerLink="/comment">Livre d'or</a>
-  <a routerLink="/about">A propos</a>
-</nav>
+<header>
+  <nav>
+    <img class="header-logo" src="https://media.giphy.com/media/LITTI5SuHLpu9hvdFL/giphy.gif" alt="Logo du site">
+    <a routerLink="/">Accueil</a>
+    <a routerLink="/search">Rechercher des informations sur un film</a>
+    <a routerLink="/comment">Livre d'or</a>
+    <a routerLink="/about">A propos</a>
+  </nav>
+</header>
 
 <router-outlet></router-outlet>
+
+<footer>
+  <p>Liste et informations concernant les films proposées par : </p> <img class="footer-logo" src="assets/logo-omdbAPI.png" alt="">
+</footer>

@@ -47,7 +47,7 @@ export class SearchMoviesComponent implements OnInit {
   }
 
   getMovieData(search: string): void{
-    fetch(`http://www.omdbapi.com/?${search}&apikey=${this.key}`) 
+    fetch(`http://www.omdbapi.com/?${search}&plot=full&apikey=${this.key}`) 
     .then(response=>response.json())
     .then(res=>{this.setMovieData(res);}) 
   }

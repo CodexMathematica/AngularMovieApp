@@ -16,7 +16,7 @@ export class CommentsComponent implements OnInit {
 
   addComment(form : any) {
     let errorMessage = document.getElementById('errorMessage'); // 'Cibler' la balise p via son id
-    if(form.value.username !='' && form.value.comment.length > 3){ // But : Empeche de soumettre un formulaire vide
+    if(form.value.username !='' && form.value.comment.length > 3){ // But : Empecher de soumettre un formulaire vide
       this.commentService.createComment(form.value);
       form.reset();
       errorMessage!.innerHTML =''; // Vider la balise p si message d'erreur afficher
